@@ -19,4 +19,5 @@ class MatplotlibHelper(object):
             subplot.plot(floats[:,1], floats[:,0], "o-", label = f)
             for x, y in zip(floats[:,1], floats[:,0]):
               subplot.annotate("({0}, {1})".format(x, y), (x, y))
+        subplot.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3, ncol=2, mode="expand", borderaxespad=0.)
         fig.savefig(out)
