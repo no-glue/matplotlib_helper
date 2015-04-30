@@ -17,6 +17,6 @@ class MatplotlibHelper(object):
             print skipped
             floats = skipped.astype("float")
             subplot.plot(floats[:,1], floats[:,0], "o-", label = f)
-            for xy in zip(floats[:, 1], floats[:, 0]):
-              subplot.annotate("(%s, %s)" % xy, xy = xy, textcoords="offset points")
+            for x, y in zip(floats[:,1], floats[:,0]):
+              subplot.annotate("({0}, {1})".format(x, y), (x, y))
         fig.savefig(out)
